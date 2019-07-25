@@ -1,0 +1,26 @@
+<h1>Books</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>product</th>
+    <th>Price</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for product in object_list %}
+    <tr>
+    <td>{{ product.product }}</td>
+    <td>{{ product.price}}</td>
+    <td><a href="{% url "product_view" product.id %}">view</a></td>
+    <td><a href="{% url "product_edit" product.id %}">edit</a></td>
+    <td><a href="{% url "product_delete" product.id %}">delete</a></td>
+
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+<a href="{% url "product_new" %}">New</a>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/css1.css' %}" />
+</head>
+<body>
+<h1>EMPLOYEE DETAILS</h1>
+
+<table border="1">
+    <th>ID</th>
+    <th>NAME</th>
+    <th>EMAIL</th>
+    <th>SALARY</th>
+     {% for acc in employee_records %}
+<tr>
+    <td>{{acc.id}}</td>
+     <td>{{acc.name}}</td>
+     <td>{{acc.email}}</td>
+     <td>{{acc.salary}}</td>
+</tr>
+     {% endfor %}
+</table>
+
+</body>
+</html>
